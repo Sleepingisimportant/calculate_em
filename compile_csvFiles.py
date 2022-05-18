@@ -3,8 +3,6 @@ Program written to read csv files and them compile all the values sorted by volt
 Written: 16.05.22
 Author: Hanna Song
 '''
-
-import numpy as np
 import pandas as pd
 import calculate_em
 

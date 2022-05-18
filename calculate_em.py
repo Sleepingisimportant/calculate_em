@@ -5,8 +5,6 @@ Written: 14.05.22
 Author: Hanna Song
 '''
 import math
-import numpy as np
-import pandas as pd
 
 pi = math.pi
 
