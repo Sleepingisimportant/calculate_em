@@ -26,13 +26,4 @@ def call_Values(I, U, R):
     URI2, C, EM  = calculate_em(U, I, R)
     return I, EM
 
-voltage = 200; meanCurrent = 3.4; radius = 0.02
-
-uri2, C, em = calculate_em(voltage, meanCurrent, radius)
-
-print(f"\nWhen the voltage is equal {voltage}, the meanCurrent is {meanCurrent},")
-print(f"and the radius of the path of the electron beam is equal to 2cm then:\n")
-print(f"U/(r*i)^2 is equal: {uri2}")
-print(f"The constant C is equal: {C}")
-print(f"e/m is equal: {em}")
 
