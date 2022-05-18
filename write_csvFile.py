@@ -29,7 +29,7 @@ for u in voltage:
     print("----------------------\n")
 
     df = pd.DataFrame(
-        columns=['radius', 'current_1', 'current_2', 'current_3', 'current_4', 'currentMean', 'em(10^11C/kg)', 'emsqrt(10^11C/kg)^2']
+        columns=['radius', 'current_1', 'current_2', 'current_3', 'current_4', 'currentMean', 'em(10^11C/kg)']
     )
 
     for r in radii:
@@ -41,7 +41,7 @@ for u in voltage:
 
         mean = calculate_em.currentMean(float(currents[0]), float(currents[1]), float(currents[2]), float(currents[3]))
 
-        iMean, eM, eMSqrt = calculate_em.call_Values(mean, u, r)
+        iMean, eM  = calculate_em.call_Values(mean, u, r)
         print(calculate_em.call_Values(mean, u, r))
 
         radius = r*100
