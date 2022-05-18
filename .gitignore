@@ -23,6 +23,7 @@ tramp
 # user values files
 emValues/values_*
 *.xlsx*
+*.csv
 
 
 # Python
