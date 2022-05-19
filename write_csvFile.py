@@ -8,6 +8,11 @@ import os
 import calculate_em
 import pandas as pd
 
+print(
+    "This program takes in four current input values, then" +
+    "calculates e/m and stores the results and values into" +
+    "a user generated directory.\n"
+)
 
 radii = [.02, .03, .04, .05]
 voltage = [150, 200, 250, 300]
@@ -49,3 +54,6 @@ for u in voltage:
         df.loc[radius,:] = [r, currents[0], currents[1], currents[2], currents[3], iMean, eM]
 
     df.to_csv(f"emValues/values_{user}/{u}Volts.csv", sep=' ')
+
+print(f"\nFolder saved in emValues")
+

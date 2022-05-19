@@ -6,6 +6,12 @@ Author: Hanna Song
 import pandas as pd
 import calculate_em
 
+print(
+    "This program will divide the measured data into smaller" +
+    "\ncsv files that will allow for the individual calculation" +
+    "\nof the largest possible relative error.\n"
+      )
+
 members =[]
 names = input("Who are in your group? ")
 members = names.split(' ')
@@ -34,12 +40,16 @@ for v in voltages:
 
     compliedDF.to_csv(f"emValues/CompliedValues.csv", sep=' ')
 
+print("\nCompiling...")
+
 # Split the dataframe by voltage and radii
 # Then save into csv files
 for v in voltages:
     vdf = compliedDF[compliedDF['volt']==v]
     for r in radii:
         rdf = vdf[vdf['radius']==r]
-        rdf.to_csv(f"emValues/{v}_{r}_values.csv", sep=' ')
+        rdf.to_csv(f"emValues/byVoltRadius/{v}_{r}_values.csv", sep=' ')
+        print(".")
         #print(rdf)
-
+print("Done!")
+print(f"Files saved in emValues/byVoltRadius")

@@ -6,7 +6,7 @@ Author: Hanna Song
 import pandas as pd
 
 error_R = 0.002  # 2 mm in meters
-R = .20
+R = .20          # 20 cm in meters
 error_U = 6      # volts
 error_r = 0.0005 # 0.5 mm in meters
 error_I = 0.09   # 90 mA in Amperes
@@ -28,9 +28,10 @@ lprErrorDF = pd.DataFrame(columns=['relError_R', 'relError_U', 'relError_r', 're
 
 i = 0
 
+# for loops takes values that are already generated and stored in emValues
 for v in voltages:
     for r in radii:
-        df = pd.read_csv(f"emValues/{v}_{r}_values.csv", sep=' ')
+        df = pd.read_csv(f"emValues/byVoltRadius/{v}_{r}_values.csv", sep=' ')
         df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
         mean_I = df['currentMean'].mean()
 
@@ -43,4 +44,4 @@ for v in voltages:
         i += 1
 
 lprErrorDF.to_csv(f"errorValues/relErrorValues.csv")
-print(lprErrorDF)
+print("Error values stored in errorValues/relErrorValues.csv")
